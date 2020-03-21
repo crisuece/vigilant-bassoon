@@ -3,7 +3,15 @@
         <title>Página de apresentação</title>
     </head>
     <body>
-        <p>Olá mundo!!</p>
-        <p>Funciona!!</p>
+        <div>
+            <h1><a href="/">Django Project Blog</a></h1>
+        </div>
+        {% for post in posts %}
+            <div>
+                <p>Published: {{post.published_date}}</p>
+                <h2><a href="">{{post.title}}</a></h2>
+                <p>{{post.text|linebreaksbr}}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
